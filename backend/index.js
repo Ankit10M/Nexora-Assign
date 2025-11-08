@@ -9,7 +9,7 @@ const app = express()
 const PORT = process.env.PORT || 5001
 
 const corsOptions = {
-   origin: 'http://localhost:5173',
+   origin: 'https://nexora-assign-mock-ecom.onrender.com',
    methods: ['GET', 'POST', 'DELETE','PUT'],
    credentials: true,
    optionSuccessStatus: 204
