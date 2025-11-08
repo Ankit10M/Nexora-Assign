@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const BASE_URL = 'https://nexora-assign-backend.onrender.com/api';
+export const BASE_URL = 'https://nexora-assign-backend.onrender.com';
 const axiosInstances = axios.create({
     baseURL: BASE_URL,
     withCredentials: true,
@@ -8,12 +8,12 @@ const axiosInstances = axios.create({
         Accept: "application/json"
     }
 })
-export const getProducts = () => axiosInstances.get('/products')
-export const getCart = () => axiosInstances.get("/cart");
-export const addToCart = (item) => axiosInstances.post("/cart", item);
-export const removeFromCart = (itemId) => axiosInstances.delete(`/cart/${itemId}`);
-export const checkoutCart = () => axiosInstances.post("/cart/checkout");
+export const getProducts = () => axiosInstances.get('/api/products')
+export const getCart = () => axiosInstances.get("/api/cart");
+export const addToCart = (item) => axiosInstances.post("/api/cart", item);
+export const removeFromCart = (itemId) => axiosInstances.delete(`/api/cart/${itemId}`);
+export const checkoutCart = () => axiosInstances.post("/api/cart/checkout");
 export const updateQtyAPI = (data) =>
-    axiosInstances.put("/cart/update", data);
+    axiosInstances.put("/api/cart/update", data);
 
 export default axiosInstances;
